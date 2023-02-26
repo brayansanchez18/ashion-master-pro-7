@@ -1,7 +1,7 @@
 <?php
-$comercio = ControladorPlantilla::ctrMostrarDivisa();
-$divisa = $comercio['divisa'];
-$ruta = $rutas[0];
+  $comercio = ControladorPlantilla::ctrMostrarDivisa();
+  $divisa = $comercio['divisa'];
+  $ruta = $rutas[0];
 ?>
 
 <!-- Breadcrumb Begin -->

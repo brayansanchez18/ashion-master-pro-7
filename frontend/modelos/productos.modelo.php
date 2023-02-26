@@ -11,14 +11,16 @@ class ModeloProductos {
       $stmt -> bindParam(':'.$item, $valor, PDO::PARAM_STR);
       $stmt -> execute();
       return $stmt -> fetch();
+      $stmt -> close();
+      $stmt = null;
     } else {
       $stmt = Conexion::conectar() -> prepare("SELECT * FROM $tabla");
       $stmt -> execute();
       return $stmt -> fetchAll();
+      $stmt -> close();
+      $stmt = null;
     }
 
-    $stmt -> close();
-    $stmt = null;
   }
 
   // MOSTRAR SUBCATEGORIAS
@@ -28,15 +30,17 @@ class ModeloProductos {
       $stmt -> bindParam(':'.$item, $valor, PDO::PARAM_STR);
       $stmt -> execute();
       return $stmt -> fetchAll();
+      $stmt -> close();
+      $stmt = null;
     } else {
       $stmt = Conexion::conectar() -> prepare("SELECT * FROM $tabla");
       $stmt -> bindParam(':'.$item, $valor, PDO::PARAM_STR);
       $stmt -> execute();
       return $stmt -> fetchAll();
+      $stmt -> close();
+      $stmt = null;
     }
 
-    $stmt -> close();
-    $stmt = null;
   }
 
   // MOSTRAR PRODUCTOS
@@ -46,14 +50,15 @@ class ModeloProductos {
       $stmt -> bindParam(':'.$item, $valor, PDO::PARAM_STR);
       $stmt -> execute();
       return $stmt -> fetchAll();
+      $stmt -> close();
+      $stmt = null;
     } else {
       $stmt = Conexion::conectar() -> prepare("SELECT * FROM $tabla WHERE estado = 1 ORDER BY $ordenar $modo LIMIT $base, $tope");
       $stmt -> execute();
       return $stmt -> fetchAll();
+      $stmt -> close();
+      $stmt = null;
     }
-
-    $stmt -> close();
-    $stmt = null;
 
   }
 
@@ -74,14 +79,15 @@ class ModeloProductos {
       $stmt -> bindParam(':'.$item, $valor, PDO::PARAM_STR);
       $stmt -> execute();
       return $stmt -> fetchAll();
+      $stmt -> close();
+      $stmt = null;
     } else {
       $stmt = Conexion::conectar() -> prepare("SELECT * FROM $tabla ORDER BY $ordenar DESC");
       $stmt -> execute();
       return $stmt -> fetchAll();
+      $stmt -> close();
+      $stmt = null;
     }
-
-    $stmt -> close();
-    $stmt = null;
   }
 
   // MOSTRAR CATEGORIAS HOME

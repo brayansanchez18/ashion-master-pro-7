@@ -1,14 +1,11 @@
 <?php
+  $base = 0; $tope = 12;
+  $ordenar = 'Rand()'; $modo = 'DESC';
+  $item = 'estado'; $valor = 1;
+  $productos_tienda = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
 
-$base = 0; $tope = 12;
-
-$ordenar = 'Rand()'; $modo = 'DESC';
-$item = 'estado'; $valor = 1;
-$productos_tienda = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
-
-$comercio = ControladorPlantilla::ctrMostrarDivisa();
-$divisa = $comercio['divisa'];
-
+  $comercio = ControladorPlantilla::ctrMostrarDivisa();
+  $divisa = $comercio['divisa'];
 ?>
 
 <!-- Breadcrumb Begin -->
@@ -38,9 +35,8 @@ $divisa = $comercio['divisa'];
             </div>
 
             <?php
-            $item = null;
-            $valor = null;
-            $categorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
+              $item = null; $valor = null;
+              $categorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
             ?>
 
             <div class="categories__accordion">
@@ -54,9 +50,8 @@ $divisa = $comercio['divisa'];
                       </div>
 
                       <?php
-                      $item = "id_categoria";
-                      $valor = $value['id'];
-                      $subCategorias = ControladorProductos::ctrMostrarSubCategorias($item, $valor);
+                        $item = 'id_categoria'; $valor = $value['id'];
+                        $subCategorias = ControladorProductos::ctrMostrarSubCategorias($item, $valor);
                       ?>
 
                       <div id="collapse<?=$key?>" class="collapse" data-parent="#accordionExample">

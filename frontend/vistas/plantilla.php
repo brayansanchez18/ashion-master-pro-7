@@ -1,11 +1,16 @@
 <?php
 
+// ICONO
+$plantilla = ControladorPlantilla::ctrEstiloPlantilla();
+
+// RUTAS
 $servidor = Ruta::ctrRutaServidor();
 $frontend = Ruta::ctrRuta();
 
+// MARCADO DE CABECERAS
 $rutas = array();
 
-	if (isset($_GET['ruta'])) { $rutas = explode('/', $_GET['ruta']); $ruta = $rutas[0]; } else { $ruta = 'inicio'; }
+if (isset($_GET['ruta'])) { $rutas = explode('/', $_GET['ruta']); $ruta = $rutas[0]; } else { $ruta = 'inicio'; }
 
 ?>
 
@@ -13,14 +18,43 @@ $rutas = array();
 <html lang="es">
 <head>
   
+  <!-- MARCADO DE CABECERAS -->
+  <?php
+    $cabeceras = ControladorPlantilla::ctrTraerCabeceras($ruta);
+
+    if (!is_array($cabeceras)) {
+      $ruta = 'inicio';
+      $cabeceras = ControladorPlantilla::ctrTraerCabeceras($ruta);
+    }
+  ?>
   <!-- META S -->
   <meta charset="UTF-8" />
-  <meta name="description" content="Ashion Template" />
-  <meta name="keywords" content="Ashion, unica, creative, html" />
+  <meta name="title" content="<?=$cabeceras['titulo']?>">
+	<meta name="description" content="<?=$cabeceras['descripcion']?>">
+	<meta name="keyword" content="<?=$cabeceras['palabrasClaves']?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-  <title>ASHION | BSTUDIOS</title>
+  <!-- Marcado de Open Graph FACEBOOK -->
+  <meta property="og:title"   content="<?=$cabeceras['titulo']?>">
+	<meta property="og:url" content="<?=$frontend.$cabeceras['ruta']?>">
+	<meta property="og:description" content="<?=$cabeceras['descripcion']?>">
+	<meta property="og:image"  content="<?=$cabeceras['portada']?>">
+	<meta property="og:type"  content="website">	
+	<meta property="og:site_name" content="<?=$cabeceras['titulo']?>">
+	<meta property="og:locale" content="es_MX">
+
+  <!-- Marcado de TWITTER -->
+  <meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="<?=$cabeceras['titulo']?>">
+	<meta name="twitter:url" content="<?=$frontend.$cabeceras['ruta']?>">
+	<meta name="twitter:description" content="<?=$cabeceras['descripcion']?>">
+	<meta name="twitter:image" content="<?=$cabeceras['portada']?>">
+	<!-- <meta name="twitter:site" content="@tu-usuario"> -->
+
+  <link rel="icon" href="<?=$servidor.$plantilla['icono']?>">
+
+  <title><?=$cabeceras['titulo']?></title>
 
   <!-- Google Font -->
   <link

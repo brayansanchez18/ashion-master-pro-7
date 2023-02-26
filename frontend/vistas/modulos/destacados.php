@@ -12,30 +12,21 @@ $rutaModulos = array('articulos-recientes','lo-mas-vendido','lo-mas-visto');
 $base = 0; $tope = 8;
 
 if ($titulosModulos[0] == 'ARTÍCULOS RECIENTES') {
-
 	$ordenar = 'id'; $item = 'estado';
 	$valor = 1; $modo = 'DESC';
-
 	$recientes = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
-
 }
 
 if ($titulosModulos[1] == 'LO MÁS VENDIDO') {
-
 	$ordenar = 'ventas'; $item = 'estado';
 	$valor = 1; $modo = 'DESC';
-
 	$ventas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
-
 }
 
 if ($titulosModulos[2] == 'LO MÁS VISTO') {
-
 	$ordenar = 'vistas'; $item = 'estado';
 	$valor = 1; $modo = 'DESC';
-
 	$vistas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
-
 }
 
 $modulos = array($recientes, $ventas, $vistas);

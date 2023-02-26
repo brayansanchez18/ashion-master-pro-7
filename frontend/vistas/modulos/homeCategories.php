@@ -1,14 +1,12 @@
 <?php
+  $servidor = Ruta::ctrRutaServidor();
+  $frontend = Ruta::ctrRuta();
 
-$servidor = Ruta::ctrRutaServidor();
-$frontend = Ruta::ctrRuta();
+  $comercio = ControladorPlantilla::ctrMostrarDivisa();
+  $divisa = $comercio['divisa'];
 
-$comercio = ControladorPlantilla::ctrMostrarDivisa();
-$divisa = $comercio['divisa'];
-
-// CATEGORIAS
-$homeCategories = ControladorProductos::ctrMostrarCategoriasHome();
-
+  // CATEGORIAS
+  $homeCategories = ControladorProductos::ctrMostrarCategoriasHome();
 ?>
 
 <!-- Categories Section Begin -->
@@ -21,14 +19,8 @@ $homeCategories = ControladorProductos::ctrMostrarCategoriasHome();
           <?php foreach ($homeCategories as $key => $value): ?>
 
             <?php
-
-              $item = 'id';
-              $valor = $value['idCategoria'];
-
+              $item = 'id'; $valor = $value['idCategoria'];
               $categoria = ControladorProductos::ctrMostrarCategorias($item, $valor);
-
-              // var_dump($categoria);
-
             ?>
 
             <!-- TODO: cuando la cantidad de categorias sea menor a 6 cambiar el diseño del banner de categorias -->
