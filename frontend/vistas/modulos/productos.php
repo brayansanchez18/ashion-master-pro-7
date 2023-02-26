@@ -4,6 +4,21 @@ $divisa = $comercio['divisa'];
 $ruta = $rutas[0];
 ?>
 
+<!-- Breadcrumb Begin -->
+<div class="breadcrumb-option">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="breadcrumb__links">
+          <a href="<?=$frontend?>"><i class="fa fa-home"></i> INICIO</a>
+          <span class="pagActiva text-uppercase"><?=$rutas[0]?></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Breadcrumb End -->
+
 <!-- Shop Section Begin -->
 <section class="shop spad">
   <div class="container">

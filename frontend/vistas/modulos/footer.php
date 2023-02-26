@@ -1,8 +1,6 @@
 <?php
 $frontend = Ruta::ctrRuta();
-
 $social = ControladorPlantilla::ctrEstiloPlantilla();
-
 $jsonRedesSociales = json_decode($social['redesSociales'], true);
 ?>
 <!-- Footer Section Begin -->
@@ -12,7 +10,7 @@ $jsonRedesSociales = json_decode($social['redesSociales'], true);
       <div class="col-lg-6 col-sm-12">
         <div class="footer__about">
           <div class="footer__logo">
-            <a href="<?=$frontend?>"><img src="vistas/img/logo.png" alt="" /></a>
+            <a href="<?=$frontend?>"><img src="<?=$servidor?>vistas/img/logo.png" alt="" /></a>
           </div>
           <div class="footer__payment">
             <a><img src="vistas/img/payment/payment-4.png" alt="" /></a>
