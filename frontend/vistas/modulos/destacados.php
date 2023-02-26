@@ -85,12 +85,12 @@ $modulos = array($recientes, $ventas, $vistas);
                         ></a>
                       </li>
                       <li>
-                        <a><span class="icon_heart_alt"></span></a>
+                        <a class="actionPointer"><span class="icon_heart_alt"></span></a>
                       </li>
 
                     <?php if ($value['tipo'] == 'virtual' && $value['precio'] != 0): ?>
                       <?php if ($value['stock'] != 0): ?>
-                        <li><a><span class="icon_bag_alt"></span></a></li>
+                        <li><a class="actionPointer"><span class="icon_bag_alt"></span></a></li>
                       <?php endif ?>
                     <?php endif ?>
                     </ul>

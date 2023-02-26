@@ -41,7 +41,7 @@
         <nav class="header__menu">
           <ul>
             <li><a href="<?=$frontend?>">Inicio</a></li>
-            <li><a href="<?=$frontend?>/tienda">Catalogo</a></li>
+            <li><a href="<?=$frontend?>tienda">Catalogo</a></li>
             <li><a href="#">Ofertas</a></li>
             <li><a href="./contact.html">Contacto</a></li>
           </ul>

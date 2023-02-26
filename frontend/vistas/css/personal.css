@@ -1,2 +1,3 @@
 a.titular { cursor: pointer; color: black; }
 a.titular:hover { color: #3b3938; }
+a.actionPointer { cursor: pointer; }
