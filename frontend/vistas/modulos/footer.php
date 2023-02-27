@@ -50,12 +50,25 @@ $jsonRedesSociales = json_decode($social['redesSociales'], true);
 <!-- Footer Section End -->
 
 <!-- Search Begin -->
-<div class="search-model">
+<!-- <div class="search-model">
   <div class="h-100 d-flex align-items-center justify-content-center">
     <div class="search-close-switch">+</div>
     <form class="search-model-form">
       <input type="text" id="search-input" placeholder="Encuentra lo que buscas..." />
     </form>
+  </div>
+</div> -->
+
+<div class="search-model">
+  <div class="h-100 d-flex align-items-center justify-content-center">
+    <div class="search-close-switch">+</div>
+    <div class="search-model-form" id="buscador">
+      <input id="search-input" placeholder="Que es lo que buscas?...">
+
+      <span class="input-group-btn">
+        <a href="<?=$frontend?>buscador/1"></a>
+      </span>
+    </div>
   </div>
 </div>
 <!-- Search End -->

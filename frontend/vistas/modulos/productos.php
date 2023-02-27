@@ -156,10 +156,10 @@
 
                       <ul class="product__hover">
                         <li><a href="<?=$servidor.$value['portada']?>" class="image-popup"><span class="arrow_expand"></span></a></li>
-                        <li><a class="productoAccion"><span class="icon_heart_alt"></span></a></li>
+                        <li><a class="actionPointer"><span class="icon_heart_alt"></span></a></li>
                         <?php if ($value['tipo'] == 'virtual' && $value['precio'] != 0): ?>
                           <?php if ($value['stock'] != 0): ?>
-                            <li><a class="productoAccion"><span class="icon_bag_alt"></span></a></li>
+                            <li><a class="actionPointer"><span class="icon_bag_alt"></span></a></li>
                           <?php endif ?>
                         <?php endif ?>
                       </ul>
@@ -178,6 +178,7 @@
                           <div class="product__price">$<?=$value['precio']?> <?=$divisa?></div>
                         <?php endif ?>
                       <?php endif ?>
+                      <!-- TODO: RETIRAR EL ID QUE SE IMPRIME EN LA PAGINA PRODUCTOS -->
                       <?php echo '<p> id='.$value['id'].'</p>' ?>
                     </div>
                   </div>
@@ -196,12 +197,12 @@
 
                   <!-- LOS BOTONES DE LAS PRIMERAS 4 PÁGINAS Y LA ÚLTIMA PÁG -->
                   <?php if ($rutas[1] == 1): ?>
-                    <?php for($i = 1; $i <= 4; $i ++): ?>
-                      <a id="item<?=$i?>" href="<?=$frontend.$rutas[0]?>/<?=$i?>"><?=$i?></a>
+                    <?php for($i = 1; $i <= 4; $i++): ?>
+                      <a id="item<?=$i?>" href="<?=$frontend.$rutas[0].'/'.$i?>"><?=$i?></a>
                     <?php endfor ?>
 
                     <a class="disable">...</a>
-                    <a id="item<?=$pagProductos?>" href="<?=$frontend.$rutas[0]?>/<?=$pagProductos?>"><?=$pagProductos?></a>
+                    <a id="item<?=$pagProductos?>" href="<?=$frontend.$rutas[0].'/'.$pagProductos?>"><?=$pagProductos?></a>
                     <a href="<?=$frontend.$rutas[0]?>/2"><i class="fa fa-angle-right"></i></a>
                     
                   <!-- LOS BOTONES DE LA MITAD DE PÁGINAS HACIA ABAJO -->
@@ -211,19 +212,19 @@
                                 $rutas[1] < ($pagProductos-3)): ?>
 
                     <?php $numPagActual = $rutas[1]; ?>
-                    <a href="<?=$frontend.$rutas[0]?>/<?=($numPagActual-1)?>">
+                    <a href="<?=$frontend.$rutas[0].'/'.($numPagActual-1)?>">
                       <i class="fa fa-angle-left"></i>
                     </a>
 
                     <?php for ($i = $numPagActual; $i <= ($numPagActual+3); $i ++): ?>
-                      <a id="item<?=$i?>" href="<?=$frontend.$rutas[0]?>/<?=$i?>"><?=$i?></a>
+                      <a id="item<?=$i?>" href="<?=$frontend.$rutas[0].'/'.$i?>"><?=$i?></a>
                     <?php endfor ?>
 
                     <a class="disable">...</a>
-                    <a id="item<?=$i?>" href="<?=$frontend.$rutas[0]?>/<?=$pagProductos?>">
+                    <a id="item<?=$i?>" href="<?=$frontend.$rutas[0].'/'.$pagProductos?>">
                       <?=$pagProductos?>
                     </a>
-                    <a href="<?=$frontend.$rutas[0]?>/<?=($numPagActual=1)?>">
+                    <a href="<?=$frontend.$rutas[0].'/'.($numPagActual=1)?>">
                       <i class="fa fa-angle-right"></i>
                     </a>
 
@@ -235,16 +236,16 @@
 
                     <?php $numPagActual = $rutas[1]; ?>
 
-                    <a href="<?=$frontend.$rutas[0]?>/<?=($numPagActual-1)?>">
+                    <a href="<?=$frontend.$rutas[0].'/'.($numPagActual-1)?>">
                       <i class="fa fa-angle-left"></i>
                     </a>
                     <a id="item1" href="<?=$frontend.$rutas[0]?>/1">1</a>
                     <a class="disable">...</a>
 
                     <?php for ($i = $numPagActual; $i <= ($numPagActual+3); $i ++): ?>
-                      <a id="item<?=$i?>" href="<?=$frontend.$rutas[0]?>/<?=$i?>"><?=$i?></a>
+                      <a id="item<?=$i?>" href="<?=$frontend.$rutas[0].'/'.$i?>"><?=$i?></a>
                     <?php endfor ?>
-                    <a href="<?=$frontend.$rutas[0]?>/<?=($numPagActual=1)?>">
+                    <a href="<?=$frontend.$rutas[0].'/'.($numPagActual=1)?>">
                       <i class="fa fa-angle-right"></i>
                     </a>
 
@@ -252,24 +253,25 @@
                     <!-- LOS BOTONES DE LAS ÚLTIMAS 4 PÁGINAS Y LA PRIMERA PÁG -->
                     <?php $numPagActual = $rutas[1]; ?>
 
-                    <a href="<?=$frontend.$rutas[0]?>/<?=($numPagActual-1)?>">
+                    <a href="<?=$frontend.$rutas[0].'/'.($numPagActual-1)?>">
                       <i class="fa fa-angle-left"></i>
                     </a>
                     <a id="item1" href="<?=$frontend.$rutas[0]?>/1">1</a>
                     <a class="disable">...</a>
 
                     <?php for ($i = ($pagProductos-3); $i <= $pagProductos; $i ++): ?>
-                      <a id="item<?=$i?>" href="<?=$frontend.$rutas[0]?>/<?=$i?>"><?=$i?></a>
+                      <a id="item<?=$i?>" href="<?=$frontend.$rutas[0].'/'.$i?>"><?=$i?></a>
                     <?php endfor ?>
                   <?php endif ?>
                 <?php else: ?>
                   <?php for($i = 1; $i <= $pagProductos; $i ++): ?>
-                    <a id="item<?=$i?>" href="<?=$frontend.$rutas[0]?>/<?=$i?>"><?=$i?></a>
+                    <a id="item<?=$i?>" href="<?=$frontend.$rutas[0].'/'.$i?>"><?=$i?></a>
                   <?php endfor ?>
                 <?php endif ?>
               <?php endif ?>
             </div>
           </div>
+
         </div>
       </div>
     </div>

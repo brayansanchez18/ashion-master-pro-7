@@ -107,10 +107,10 @@
 
               <ul class="product__hover">
                 <li><a href="<?=$servidor.$value['portada']?>" class="image-popup"><span class="arrow_expand"></span></a></li>
-                <li><a class="productoAccion"><span class="icon_heart_alt"></span></a></li>
+                <li><a class="actionPointer"><span class="icon_heart_alt"></span></a></li>
                 <?php if ($value['tipo'] == 'virtual' && $value['precio'] != 0): ?>
                   <?php if ($value['stock'] != 0): ?>
-                    <li><a class="productoAccion"><span class="icon_bag_alt"></span></a></li>
+                    <li><a class="actionPointer"><span class="icon_bag_alt"></span></a></li>
                   <?php endif ?>
                 <?php endif ?>
               </ul>

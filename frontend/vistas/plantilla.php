@@ -164,5 +164,6 @@ if (isset($_GET['ruta'])) { $rutas = explode('/', $_GET['ruta']); $ruta = $rutas
   <script src="<?=$frontend?>vistas/js/jquery.nicescroll.min.js"></script>
   <script src="<?=$frontend?>vistas/js/main.js"></script>
   <script src="<?=$frontend?>vistas/js/plantilla.js"></script>
+  <script src="<?=$frontend?>vistas/js/buscador.js"></script>
 </body>
 </html>
