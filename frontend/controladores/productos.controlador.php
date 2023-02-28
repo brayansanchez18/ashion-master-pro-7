@@ -45,19 +45,24 @@ class ControladorProductos {
   }
 
   // BUSCADOR
-
   static public function ctrBuscarProductos($busqueda, $ordenar, $modo, $base, $tope) {
 		$tabla = 'productos';
 		$respuesta = ModeloProductos::mdlBuscarProductos($tabla, $busqueda, $ordenar, $modo, $base, $tope);
 		return $respuesta;
 	}
 
+  // LISTAR PRODUCTOS BUSCADOR
   static public function ctrListarProductosBusqueda($busqueda) {
 		$tabla = 'productos';
 		$respuesta = ModeloProductos::mdlListarProductosBusqueda($tabla, $busqueda);
 		return $respuesta;
 	}
 
-  // LISTAR PRODUCTOS BUSCADOR
+  // ACTUALIZAR VISTA PRODUCTO
+  static public function ctrActualizarProducto($item1, $valor1, $item2, $valor2) {
+		$tabla = 'productos';
+		$respuesta = ModeloProductos::mdlActualizarProducto($tabla, $item1, $valor1, $item2, $valor2);
+		return $respuesta;
+	}
 
 }

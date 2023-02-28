@@ -150,7 +150,7 @@ if (isset($_GET['ruta'])) { $rutas = explode('/', $_GET['ruta']); $ruta = $rutas
   
   ?>
 
-  <input type="hidden" value="<?=$url?>" id="rutaOculta">
+  <input type="hidden" value="<?=$frontend?>" id="rutaOculta">
   
   <!-- Js Plugins -->
   <script src="<?=$frontend?>vistas/js/jquery-3.3.1.min.js"></script>
@@ -165,5 +165,6 @@ if (isset($_GET['ruta'])) { $rutas = explode('/', $_GET['ruta']); $ruta = $rutas
   <script src="<?=$frontend?>vistas/js/main.js"></script>
   <script src="<?=$frontend?>vistas/js/plantilla.js"></script>
   <script src="<?=$frontend?>vistas/js/buscador.js"></script>
+  <script src="<?=$frontend?>/vistas/js/infoproducto.js"></script>
 </body>
 </html>

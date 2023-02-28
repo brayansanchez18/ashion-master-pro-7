@@ -1,7 +1,8 @@
+var rutaOculta = $('#rutaOculta').val();
+
 // MIGAS DE PAN
 
 let pagActiva = $(".pagActiva").html();
-console.log(pagActiva);
 
 if (pagActiva ) {
   if (pagActiva != null) {
